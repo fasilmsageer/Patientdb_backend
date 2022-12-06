@@ -1,17 +1,15 @@
 package com.nest.Patientdb_backend.controller;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Entity
-@Table(name = "patient")
-
+@RestController
 public class PatientController {
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/")
-    public String viewpatient()
-        return
+    @GetMapping("/viewpatient")
+    public String viewpatient(){
+        return "view all employee";}
 }
