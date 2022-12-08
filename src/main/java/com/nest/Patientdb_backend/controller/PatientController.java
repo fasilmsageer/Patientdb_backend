@@ -27,9 +27,14 @@ public class PatientController {
         System.out.println(p.getAge().toString());
         System.out.println(p.getGender().toString());
         System.out.println(p.getDoctor().toString());
-
         dao.save(p);
+        return "Patient added";}
 
-
-        return "add patient";}
+    @CrossOrigin(origins = "*")
+    @PostMapping(value = "/searchpatient", consumes = "application/json", produces = "application/json")
+    public List<Patient> searchpatient(@RequestBody Patient p){
+        String name = String.valueOf(p.getName()) ;
+        System.out.println(name);
+        return (List<Patient>) dao.SearchPatient(p.getName());
+    }
 }
